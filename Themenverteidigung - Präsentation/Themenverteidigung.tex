@@ -8,9 +8,11 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{multirow}
+\usepackage{array}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \usetheme{Dresden}
 \author{Felix Beckmann, Leonhard Alkewitz, Max Lautenbach}
-\title{Die Optimierung der Energiebilanz von simulierten Gebäuden mit Hilfe von evolutionären Algorithmen}
+\title{Die Optimierung der Energiebilanz von simulierten Gebäuden mit Hilfe eines evolutionären Algorithmus'}
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
 \logo{\includegraphics[scale=.05]{logo.png}} 
@@ -69,14 +71,14 @@
 
 \begin{frame}{Zielstellung der Seminarfacharbeit und Abgrenzung des Themas}
 \begin{itemize}
-\item{Aneignen von themenbezogenen Fachwissen}\pause
+\item{Aneignen von themenbezogenem Fachwissen}\pause
 \item{Erstellung einer Simulation unter Berücksichtigung von Bedienungen}\pause
 \item{Anwendung von EA\footnote{EA = evolutionärer Algorithmus}}\pause
-\item{graphische Ausgabe der Gebäude}\pause
+\item{graphische Ausgabe der evolvierten Gebäude}\pause
 \item{Abgrenzung des Themas}\pause
 \begin{itemize}
 \item{Spezialisierung auf Wohngebäude}
-\item{Grundlagen der Statik und Baustoffe}
+\item{Begrenzung auf Grundlagen der Statik und Werkstoffkunde}
 \item{detaillose Darstellung der Gebäude}
 \item{keine zusätzliche Energiequelle, z.B. Solartechnik} 
 \end{itemize}
@@ -88,50 +90,50 @@
 \item{Literaturrecherche für themenspezifisches Wissen}\pause
 \item{Wiederholung der objektorientierten Programmierung mit Hilfe von Java}\pause
 \item{Programmierung einer Simulation als Umgebung für Optimierung}\pause
-\item{Weiterentwicklung der Häuser mithilfe von computergestützten, evolutionären Optimierungsverfahren (Bibliothek \textsc{Jenetics}}\pause
-\item{Auswertung und Visualisierung (Bibliothek \textsc{OpenGL}) der Ergebnisse und Fehleranalyse}\pause
+\item{Weiterentwicklung der Häuser mithilfe eines computergestützten, evolutionären Optimierungsverfahren (Bibliothek \textsc{Jenetics})}\pause
+\item{Auswertung und Visualisierung (Bibliothek \textsc{OpenGL}) der Ergebnisse und Fehleranalyse}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Vorstellung des Zeitplans}
 \begin{footnotesize}
-\begin{tabular}{|p{2cm}||p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
+\begin{tabular}{|M{2cm}||M{2.5cm}|M{2.5cm}|M{2.5cm}|} \hline
    Datum & Leonhard & Felix & Max \\ \hline \hline
-   \multirow{2}*{Oktober 2018} & \multicolumn{3}{|p{7.5cm}|}{Literaturrecherche und Javakenntnisse auffrischen} \\ 
-   & Bauphysik & 3D Graphik & evolutionäre Algorithmen \\ \hline
-   November 2018 & Wissenstand über Architektur erweitern  & \multicolumn{2}{|p{5cm}|}{Ansätze der Simulation: Objekt Haus mit grundlegenden Eigenschaften}\\ \hline
-   Dezember 2018 & Statikkenntnisse aneignen & Sachverstand über 3D Graphik erweitern & Rahmen für EA:\footnote{EA = evolutionärer Algorithmus} Einbinden in Simulation\\ \hline
+   \multirow{2}*{Oktober 2018} & \multicolumn{3}{|M{7.5cm}|}{Literaturrecherche und Javakenntnisse auffrischen} \\ \cline{2-4}
+   & Bauphysik & 3D Graphik & evolutionäre \newline Algorithmen \\ \hline
+   November 2018 & Wissenstand über Architektur erweitern  & \multicolumn{2}{|M{5cm}|}{Ansätze der Simulation: Objekt \textit{Haus} mit grundlegenden Eigenschaften}\\ \hline
+   Dezember 2018 & Statikkenntnisse aneignen & Sachverstand über 3D Graphik erweitern & Rahmen für EA: \newline Einbinden in Simulation\\ \hline
    Januar 2019 & Physik des Energieverlustes & Modellierung von Hausmodulen\footnote{Haus wird aus mehreren Modulen aufgebaut} & Methoden der Vererbung von EA implementieren \\ \hline   
-   Februar 2019 & \multicolumn{3}{|p{7.5cm}|}{Puffer} \\ \hline
+   Februar 2019 & \multicolumn{3}{|M{7.5cm}|}{Puffer} \\ \hline
 \end{tabular}
 \end{footnotesize}
 \end{frame}
 
 \begin{frame}{Vorstellung des Zeitplans}
 \begin{footnotesize}
-\begin{tabular}{|p{2cm}||p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
+\begin{tabular}{|M{2cm}||M{2.5cm}|M{2.5cm}|M{2.5cm}|} \hline
    Datum & Leonhard & Felix & Max \\ \hline \hline
    März 2019 & wichtige Werte für Energiebilanz in Programm einbinden & Grundlage für Module in Programm einbinden & Verfassen Kapitel zu Optimierung \\ \hline
-   April 2019 & Energiequellen herausarbeiten & \multicolumn{2}{|p{5cm}|}{Wissen über Architektur in Programm einbinden} \\ \hline
-   Mai 2019 & Verfassen Kapitel zu Statik und Architektur & \multicolumn{2}{|p{5cm}|}{Sachverständnis zu thermalen Austausch von Haus in Simulation einbinden} \\ \hline
-   Juni 2019 &  graphische Implementierung von Modulen & Verfassen der Kapitel zu thermalen Austausch & Methode zu Energiebilanzberechnung \\ \hline
-   Juli 2019 & \multicolumn{3}{|p{7.5cm}|}{Puffer} \\ \hline
-   August 2019 & Verfassen der Kapitel zu 3D Graphik & \multicolumn{2}{|p{5cm}|}{Beispieldurchlauf und Ergebnisdokumentation} \\ \hline
+   April 2019 & Energiequellen herausarbeiten & \multicolumn{2}{|M{5cm}|}{Wissen über Architektur in Programm einbinden} \\ \hline
+   Mai 2019 & Verfassen Kapitel zu Statik und Architektur & \multicolumn{2}{|M{5cm}|}{Sachverständnis zu thermalen Austausch von Haus in Simulation einbinden} \\ \hline
+   Juni 2019 & Verfassen der Kapitel zu thermalen Austausch & graphische Implementierung von Modulen & Methode zu Energiebilanzberechnung \\ \hline
+   Juli 2019 & \multicolumn{3}{|M{7.5cm}|}{Puffer} \\ \hline
+   August 2019 & Beispieldurchlauf und Ergebnisdokumentation & Verfassen der Kapitel zu 3D Graphik & Beispieldurchlauf und Ergebnisdokumentation \\ \hline
 \end{tabular}
 \end{footnotesize}
 \end{frame}
 
 \begin{frame}{Vorstellung des Zeitplans}
 \begin{footnotesize}
-\begin{tabular}{|p{2cm}||p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
-   Datum & Felix & Leonhard & Max \\ \hline \hline
-   September 2019 & Visualisierung der Ergebnisse & \multicolumn{2}{|p{5cm}|}{Fehleranalyse und -berichtigung} \\ \hline
-   Oktober 2019 & Visualisierung der Ergebnisse & \multicolumn{2}{|p{5cm}|}{Verfassen der Kapitel zu Simulation} \\ \hline
+\begin{tabular}{|M{2cm}||M{2.5cm}|M{2.5cm}|M{2.5cm}|} \hline
+   Datum & Leonhard & Felix & Max \\ \hline \hline
+   September 2019 & Fehleranalyse und -berichtigung & Visualisierung der Ergebnisse & Fehleranalyse und -berichtigung \\ \hline
+   Oktober 2019 & Verfassen der Kapitel zu Simulation & Visualisierung der Ergebnisse & Verfassen der Kapitel zu Simulation \\ \hline
    November 2019 & Verfassen der Kapitel zu Simulation & Ausbesserung von graphischen Fehlern & Ausbessern von programmierten Fehlern \\ \hline
-   Dezember 2019 & \multicolumn{3}{|p{7.5cm}|}{Korrekturlesen und Abgabe der Seminarfacharbeit} \\ \hline
-    Januar 2020 & \multicolumn{3}{|p{7.5cm}|}{Sicherstellung der Lauffähigkeit des Programms und graphische Vorbereitung auf Verteidigung} \\ \hline
-     Februar 2020 & \multicolumn{3}{|p{7.5cm}|}{Erstellung der Präsentation und Beispielen} \\ \hline
-      März 2020 & \multicolumn{3}{|p{7.5cm}|}{Vorbereitung des Kolloquiums} \\ \hline
+   Dezember 2019 & \multicolumn{3}{|M{7.5cm}|}{Korrekturlesen und Abgabe der Seminarfacharbeit} \\ \hline
+    Januar 2020 & \multicolumn{3}{|M{7.5cm}|}{Sicherstellung der Lauffähigkeit des Programms und graphische Vorbereitung auf Verteidigung} \\ \hline
+     Februar 2020 & \multicolumn{3}{|M{7.5cm}|}{Erstellung der Präsentation und Beispielen} \\ \hline
+      März 2020 & \multicolumn{3}{|M{7.5cm}|}{Vorbereitung des Kolloquiums} \\ \hline
 \end{tabular}
 \end{footnotesize}
 \end{frame}
@@ -140,7 +142,7 @@
 \pause
 \item{hohes Potential der Verbesserung der Energiebilanz von Wohngebäuden}\pause
 \item{Affinität zur Informatik, Architektur und Bauphysik}\pause
-\item{Verbinden von Informatik und Physik in Form von algorithmischer Nutzung von Bauphysik}\pause
+\item{Verbinden von Informatik und Physik in Form von algorithmischer Anwendung von Bauphysik}\pause
 \item{Anwenden von evolutionären Algorithmen auf ein reales Problem}\pause
 \item{automatisierte Planung von Häusern unter Einbezug von Energiebilanz und Statik}\pause
 \item{Entdecken möglicher unkonventioneller, unbekannter Hausformen}
@@ -162,10 +164,10 @@ Graf, Anton; Neue Passivhäuser; Verlag Georg D.W. Callwey, München, 2003}
 
 \begin{frame}{Bildquellen}
 \begin{thebibliography}{9}
-\bibitem{1}
+\bibitem{4}
 \textcolor{black}{
 \textit{Abbildung 1}; Prof. Dr. Markl, Jürgen; Markl Biologie; S. 256.1; 1. Auflage; Ernst Klett Verlag, Stuttgart, 2010}
-\bibitem{2}
+\bibitem{5}
 \textcolor{black}{
 \textit{Abbildung 2}; \url{https://www.baunetzwissen.de/imgs/5/7/5/8/5/3/0dd5dc31023435ef.jpg}; zuletzt besucht: 27.09.2018}
 \end{thebibliography}
